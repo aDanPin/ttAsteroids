@@ -28,7 +28,6 @@ public class InputEvents : MonoBehaviour
     public event Action<Vector2> onRotateLeftTriggerEnter;
     public void rotateLeftTriggerEnter() {
         if(onRotateLeftTriggerEnter != null) {
-            Debug.Log(1);
             onRotateLeftTriggerEnter(Vector2.left);
         }
     }

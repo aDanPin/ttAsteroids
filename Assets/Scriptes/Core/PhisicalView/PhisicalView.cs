@@ -35,10 +35,8 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         transform.position = pos;
     }
 
-    public void SetRotation(Vector2 dir) {
-        // Check first!!
-        float angle = Vector2.Angle(Vector2.up, dir);
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    public void SetRotation(float dir) {
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, dir));
     }
 
     private void Initialize() {

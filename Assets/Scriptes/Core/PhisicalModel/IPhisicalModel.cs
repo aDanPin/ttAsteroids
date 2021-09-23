@@ -9,6 +9,6 @@ public interface IPhisicalModel {
     void Rotate(int id, Vector2 dir, float speed);
     void UpdatePhisicals();
     Vector2 GetPosition(int id);
-    Vector2 GetRotation(int id);
+    float GetRotation(int id);
     void Clear();
 }

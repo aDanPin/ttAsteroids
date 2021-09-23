@@ -18,7 +18,7 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
 
         foreach(int key in views.Keys) {
             Vector2 pos = _pm.GetPosition(key);
-            Vector2 rot = _pm.GetRotation(key);
+            float rot   = _pm.GetRotation(key);
 
             views[key].SetPosition(pos);
             views[key].SetRotation(rot);

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PhisicalBody : IPhisicalBody
 {
-    // Make a default value consructor
     private Vector2 position;
-    private Vector2 direction;
+    private float direction; // Velue of angle  between Vector2.up
+                             // and direction of object
     private Vector2 velocity;
     private Vector2 acceleration;
     private float mass;
@@ -14,10 +14,10 @@ public class PhisicalBody : IPhisicalBody
     private const float DELTA_TIME = 0.01f;
 
     public Vector2 Position{get{return position;}}
-    public Vector2 Rotation{get{return direction;}}
+    public float Rotation{get{return direction;}}
 
     public PhisicalBody(Vector2 p = default(Vector2), float m = 1,
-                 Vector2 d = default(Vector2),
+                 float d   = 0f,
                  Vector2 v = default(Vector2),
                  Vector2 a = default(Vector2)) {
         position     = p;
@@ -34,8 +34,7 @@ public class PhisicalBody : IPhisicalBody
 
     public void ExertForce(Vector2 dir, float value) {
         // The direction here is relative to the direction of the body
-        float angle = Vector2.Angle(direction, dir);
-        Vector2 actualDir = Utils.Rotate(dir, angle);
+        Vector2 actualDir = Utils.Rotate(dir, direction);
 
         forceHub += actualDir.normalized * value;
     }
@@ -84,15 +83,11 @@ public class PhisicalBody : IPhisicalBody
     }
 
     public void Rotate(Vector2 dir, float speed) {
-        if(dir == Vector2.left)  RotateLeft(speed);
-        if(dir == Vector2.right) RotateRight(speed);
+        if(dir == Vector2.left)  RotateP( speed);
+        if(dir == Vector2.right) RotateP(-speed);
     }
 
-    private void RotateRight(float speed) {
-        direction = Quaternion.AngleAxis(speed, Vector3.forward) * direction;
-    }
-
-    private void RotateLeft(float speed) {
-        direction = Quaternion.AngleAxis(speed, Vector3.forward) * direction;
+    private void RotateP(float speed) {
+        direction += speed;
     }
 }

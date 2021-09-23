@@ -12,7 +12,7 @@ public class PhisicalModel : MonoBehaviour, IPhisicalModel
     }
 
     public void AddModel(int id, float mass, Vector2 pos) {
-        IPhisicalBody pb = new PhisicalBody(pos, mass, Vector2.up);
+        IPhisicalBody pb = new PhisicalBody(pos, mass);
 
         bodies.Add(id, pb);
     }
@@ -22,7 +22,6 @@ public class PhisicalModel : MonoBehaviour, IPhisicalModel
     }
 
     public void Rotate(int id, Vector2 dir, float speed) {
-        Debug.Log(4);
         bodies[id].Rotate(dir, speed);
     }
 
@@ -40,7 +39,7 @@ public class PhisicalModel : MonoBehaviour, IPhisicalModel
         return bodies[id].Position;
     }
 
-    public Vector2 GetRotation(int id) {
+    public float GetRotation(int id) {
         return bodies[id].Rotation;
     }
 

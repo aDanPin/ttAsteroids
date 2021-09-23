@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PhisicalBody
+public class PhisicalBody : IPhisicalBody
 {
     // Make a default value consructor
     private Vector2 position;

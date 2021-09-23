@@ -1,0 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public interface IPhisicalModel {
+    void AddModel(int id, float mass, Vector2 pos);
+    void RemoveModel(int id);
+    void ExertForce(int id, Vector2 dir, float val, float time);
+    void UpdatePhisicals();
+    Vector2 GetPosition(int id);
+    Vector2 GetRotation(int id);
+    void Clear();
+}

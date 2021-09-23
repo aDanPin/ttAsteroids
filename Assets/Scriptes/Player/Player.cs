@@ -12,6 +12,8 @@ public class Player : PhisicalView
         base.Start();
 
         InputEvents.current.onMoveTriggerEnter += Move;
+        InputEvents.current.onRotateRightTriggerEnter += Rotate;
+        InputEvents.current.onRotateLeftTriggerEnter  += Rotate;
     }
 
     private void Move() {

@@ -43,7 +43,7 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
     }
 
     public void Rotate(int id, Vector2 dir, float rotateSpeed) {
-        // _pm.Rotate(id, dir, rotateSpeed);
+        _pm.Rotate(id, dir, rotateSpeed);
     }
 
     public void ExertForce(int id, Vector2 dir, float val, float time) {

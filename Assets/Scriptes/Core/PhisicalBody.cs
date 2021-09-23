@@ -82,4 +82,17 @@ public class PhisicalBody : IPhisicalBody
             position = newPos;
         }
     }
+
+    public void Rotate(Vector2 dir, float speed) {
+        if(dir == Vector2.left)  RotateLeft(speed);
+        if(dir == Vector2.right) RotateRight(speed);
+    }
+
+    private void RotateRight(float speed) {
+        direction = Quaternion.AngleAxis(speed, Vector3.forward) * direction;
+    }
+
+    private void RotateLeft(float speed) {
+        direction = Quaternion.AngleAxis(speed, Vector3.forward) * direction;
+    }
 }

@@ -17,4 +17,19 @@ public class InputEvents : MonoBehaviour
             onMoveTriggerEnter();
         }
     }
+
+    public event Action<Vector2> onRotateRightTriggerEnter;
+    public void rotateRightTriggerEnter() {
+        if(onRotateRightTriggerEnter != null) {
+            onRotateRightTriggerEnter(Vector2.right);
+        }
+    }
+
+    public event Action<Vector2> onRotateLeftTriggerEnter;
+    public void rotateLeftTriggerEnter() {
+        if(onRotateLeftTriggerEnter != null) {
+            Debug.Log(1);
+            onRotateLeftTriggerEnter(Vector2.left);
+        }
+    }
 }

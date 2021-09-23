@@ -31,7 +31,6 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         id = commonId;
         commonId++;
 
-        Debug.Log("Start called");
         Initialize();
         InitializeValues();
     }

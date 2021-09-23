@@ -15,10 +15,13 @@ public class AsteroidsSpawner : SpawnerBase
         var asteroidView = asteroid.GetComponent<IPhisicalView>();
 
         float rotationDegree = GetRotationDegree();
-        Vector2 direction    = GetDirection();
+        Vector2 direction    = GetDirection(spawnPoint);
         float speed          = GetSpeedValue();        
         asteroidView.SetValueToInit(rotationDegree,
                                     direction, speed);
+
+        Debug.DrawLine(spawnPoint, spawnPoint + direction.normalized * 12,
+                       Color.red, 5f);
     }
 
     private Vector2 GetSpawnPoint() {
@@ -37,9 +40,8 @@ public class AsteroidsSpawner : SpawnerBase
         }
     }
 
-    private Vector2 GetDirection() {
+    private Vector2 GetDirection(Vector2 sp) {
         Vector2 pp = GameObject.FindWithTag("Player").transform.position;
-        Vector2 sp = transform.position;
 
         return pp - sp;
     }

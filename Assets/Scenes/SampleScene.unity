@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371597371}
   m_LocalRotation: {x: 0, y: 0, z: 0.0002617804, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1762150257}
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDelay: 5
   prefab: {fileID: 2359785953288391886, guid: a670c9efbaf1e7b408c9eeeb6b83c95e, type: 3}
-  randomSpeedLimits: {x: 10, y: 15}
+  randomSpeedLimits: {x: 2, y: 5}
 --- !u!1 &1029818392
 GameObject:
   m_ObjectHideFlags: 0

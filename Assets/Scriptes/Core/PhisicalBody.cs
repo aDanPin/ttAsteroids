@@ -13,10 +13,13 @@ public class PhisicalBody : IPhisicalBody
     private Vector2 forceHub = Vector2.zero;
     private const float DELTA_TIME = 0.01f;
 
+    public Vector2 Position{get{return position;}}
+    public Vector2 Rotation{get{return direction;}}
 
-    PhisicalBody(Vector2 p = default(Vector2), Vector2 d = default(Vector2),
-                 Vector2 v = default(Vector2), Vector2 a = default(Vector2),
-                 float m = 1) {
+    public PhisicalBody(Vector2 p = default(Vector2), float m = 1,
+                 Vector2 d = default(Vector2),
+                 Vector2 v = default(Vector2),
+                 Vector2 a = default(Vector2)) {
         position     = p;
         direction    = d;
         velocity     = v;

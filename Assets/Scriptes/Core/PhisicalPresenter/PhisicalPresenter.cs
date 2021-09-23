@@ -10,8 +10,7 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
 
     private void Awake() {
         views = new Dictionary<int, IPhisicalView>();
-
-        InitializeModel();        
+        InitializeModel();
     }
 
     private void FixedUpdate() {
@@ -28,8 +27,12 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
 
     public void AddView(IPhisicalView pv, int id, float mass,
                         Vector2 pos) {
+        if(views == null) {
+            views = new Dictionary<int, IPhisicalView>();
+        }
         views.Add(id, pv);
 
+        if (_pm == null) Debug.Log("Null model");
         _pm.AddModel(id, mass, pos);
     }
 
@@ -48,8 +51,7 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
     }
 
     private void InitializeModel() {
-        _pm = GameObject.FindGameObjectWithTag("PhisicalModel")
-                  .GetComponent<IPhisicalModel>();
+        _pm = gameObject.AddComponent<PhisicalModel>();
 
         if(_pm == null) {
             Debug.Log("Empty model");

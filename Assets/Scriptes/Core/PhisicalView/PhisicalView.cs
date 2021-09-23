@@ -14,10 +14,12 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
 
     private IPhisicalPresenter _pp;
 
-    protected void Awake() {
+    protected virtual void Awake() {
         id = commonId;
         commonId++;
+    }
 
+    protected virtual void Start() {
         Initialize();
     }
 

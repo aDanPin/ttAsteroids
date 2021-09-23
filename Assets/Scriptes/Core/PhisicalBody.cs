@@ -87,7 +87,15 @@ public class PhisicalBody : IPhisicalBody
         if(dir == Vector2.right) RotateP(-speed);
     }
 
+    public void Rotate(float degree) {
+        RotateP(degree);
+    }
+
     private void RotateP(float speed) {
         direction += speed;
+    }
+
+    public void SetVelocity(Vector2 dir, float val) {
+        velocity = dir.normalized * val;
     }
 }

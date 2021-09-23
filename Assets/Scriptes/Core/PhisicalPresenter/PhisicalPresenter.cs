@@ -42,8 +42,17 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
         _pm.RemoveModel(id);
     }
 
+    public void SetVelocity(int id, Vector2 dir, float val) {
+        _pm.SetVelocity(id, dir, val);
+    }
+
+
     public void Rotate(int id, Vector2 dir, float rotateSpeed) {
         _pm.Rotate(id, dir, rotateSpeed);
+    }
+
+    public void Rotate(int id, float degree) {
+        _pm.Rotate(id, degree);
     }
 
     public void ExertForce(int id, Vector2 dir, float val, float time) {

@@ -25,6 +25,14 @@ public class PhisicalModel : MonoBehaviour, IPhisicalModel
         bodies[id].Rotate(dir, speed);
     }
 
+    public void Rotate(int id, float degree) {
+        bodies[id].Rotate(degree);
+    }
+
+    public void SetVelocity(int id, Vector2 dir, float val) {
+        bodies[id].SetVelocity(dir, val);
+    }
+
     public void ExertForce(int id, Vector2 dir, float val, float time) {
         bodies[id].ExertForce(dir, val);
     }

@@ -14,17 +14,49 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
 
     private IPhisicalPresenter _pp;
 
-    protected virtual void Awake() {
-        id = commonId;
-        commonId++;
+    struct ValueToInit {
+        public ValueToInit(float r = 0, Vector2 d = default, float s = 0) {
+            rotation = r;
+            speedDirection = d;
+            speedValue = s;
+        }
+
+        public float rotation;
+        public Vector2 speedDirection;
+        public float speedValue;
     }
+    private ValueToInit valueToInit;
 
     protected virtual void Start() {
+        id = commonId;
+        commonId++;
+
+        Debug.Log("Start called");
         Initialize();
+        InitializeValues();
+    }
+
+    public void SetValueToInit(float rotationDegree, Vector2 speedDirection,
+                          float speedValue) {
+        valueToInit = new ValueToInit(rotationDegree, speedDirection, speedValue);
+    }
+
+    private void InitializeValues() {
+        Rotate(valueToInit.rotation);
+        SetVelocity(valueToInit.speedDirection,
+                    valueToInit.speedValue);
     }
 
     public void Rotate(Vector2 dir) {
         _pp.Rotate(id, dir, rotateSpeed);
+    }
+
+    public void Rotate(float degree) {
+        _pp.Rotate(id, degree);
+    }
+
+    public void SetVelocity(Vector2 dir, float val) {
+        _pp.SetVelocity(id, dir, val);
     }
 
     public void ExertForce(Vector2 dir, float val, float time) {

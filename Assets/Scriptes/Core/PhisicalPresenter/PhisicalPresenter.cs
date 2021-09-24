@@ -20,8 +20,8 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
             Vector2 pos = _pm.GetPosition(key);
             float rot   = _pm.GetRotation(key);
 
-            views[key].SetPosition(pos);
-            views[key].SetRotation(rot);
+            views[key].ApplyPosition(pos);
+            views[key].ApplyRotation(rot);
         }        
     }
 
@@ -42,11 +42,6 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
         _pm.RemoveModel(id);
     }
 
-    public void SetVelocity(int id, Vector2 dir, float val) {
-        _pm.SetVelocity(id, dir, val);
-    }
-
-
     public void Rotate(int id, Vector2 dir, float rotateSpeed) {
         _pm.Rotate(id, dir, rotateSpeed);
     }
@@ -55,8 +50,16 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
         _pm.Rotate(id, degree);
     }
 
-    public void ExertForce(int id, Vector2 dir, float val, float time) {
-        _pm.ExertForce(id, dir, val, time);
+    public void SetVelocity(int id, Vector2 dir, float val) {
+        _pm.SetVelocity(id, dir, val);
+    }
+
+    public void SetForce(int id, Vector2 dir, float val) {
+        _pm.SetForce(id, dir, val);
+    }
+
+    public float GetRotation(int id) {
+        return _pm.GetRotation(id);
     }
 
     private void InitializeModel() {

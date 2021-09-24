@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player : PhisicalView
 {
-    [SerializeField]
-    private float moveForce = 10;
-
     protected override void Start()
     {
         base.Start();
@@ -17,6 +14,6 @@ public class Player : PhisicalView
     }
 
     private void Move() {
-        ExertForce(Vector2.up, moveForce, Time.fixedDeltaTime);
+        SetForce(Vector2.up, moveForce);
     }
 }

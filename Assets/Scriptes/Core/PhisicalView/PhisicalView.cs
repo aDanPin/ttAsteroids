@@ -5,14 +5,16 @@ using UnityEngine;
 public class PhisicalView : MonoBehaviour, IPhisicalView
 {
     static int commonId = 0;
-    private int id;
+    protected int id;
 
     [SerializeField]
-    private float rotateSpeed;
+    protected float rotateSpeed;
     [SerializeField]
-    private float mass = 1;
+    protected float mass = 1;
+    [SerializeField]
+    protected float moveForce = 10;
 
-    private IPhisicalPresenter _pp;
+    protected IPhisicalPresenter _pp;
 
     struct ValueToInit {
         public ValueToInit(float r = 0, Vector2 d = default, float s = 0) {
@@ -58,15 +60,15 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         _pp.SetVelocity(id, dir, val);
     }
 
-    public void ExertForce(Vector2 dir, float val, float time) {
-        _pp.ExertForce(id, dir, val, time);
+    public void SetForce(Vector2 dir, float val) {
+        _pp.SetForce(id, dir, val);
     }
 
-    public void SetPosition(Vector2 pos) {
+    public void ApplyPosition(Vector2 pos) {
         transform.position = pos;
     }
 
-    public void SetRotation(float dir) {
+    public void ApplyRotation(float dir) {
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, dir));
     }
 
@@ -79,6 +81,10 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         }
 
         _pp.AddView(this, id, mass, transform.position);
+    }
+
+    public float GetRotation() {
+        return _pp.GetRotation(id);
     }
 
     public void StartDestroy() {

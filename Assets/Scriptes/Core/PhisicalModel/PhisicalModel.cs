@@ -33,7 +33,7 @@ public class PhisicalModel : MonoBehaviour, IPhisicalModel
         bodies[id].SetVelocity(dir, val);
     }
 
-    public void ExertForce(int id, Vector2 dir, float val, float time) {
+    public void SetForce(int id, Vector2 dir, float val) {
         bodies[id].ExertForce(dir, val);
     }
     

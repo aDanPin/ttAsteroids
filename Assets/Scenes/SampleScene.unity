@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 830c5907baa655d43ad9f8f5a9bd2670, type: 3}
-  m_NotificationBehavior: 3
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -478,27 +478,11 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 10389833-c480-4a91-8e47-a7c9d3a9c6a0
+    m_ActionId: fff183a9-8a91-48bb-ba5f-2a2860bd0968
     m_ActionName: main/Move[/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1646b19e-3efe-4335-ad7e-f082e0d7fd30
-    m_ActionName: main/RotateRight[/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 85a67071-deb6-41b3-96b0-1d8b0831521c
-    m_ActionName: main/RotateLeft[/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4c2f45ec-d190-4479-abea-06135d0e9803
-    m_ActionName: main/Fier[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 70870d73-d1e0-42bd-8555-9fa1bbb42feb
-    m_ActionName: main/Laser[/Keyboard/v]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: f90ed2b8-c516-41d7-b69d-af8b4d0f52a4
+  m_DefaultActionMap: main
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &519420028

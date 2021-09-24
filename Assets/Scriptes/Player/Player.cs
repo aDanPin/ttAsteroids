@@ -39,6 +39,21 @@ public class Player : PhisicalView
 
     private void Update() {
         DoLaserStuff();
+        ShowMetrics();
+    }
+
+    private void ShowMetrics() {
+        float r = GetRotation();
+        r = r % 360;
+        r = r > 0 ? r : 360 - r;    
+
+        float cd = laserCooldown - timePastAfterLiser;
+        cd = cd > 0 ? cd : 0;
+
+        ShowingMetrics.current.UpdateMetrisc(GetPosition(),
+                                             r,
+                                             GetSpeed(),
+                                             cd);
     }
 
     private void DoInputStuff() {

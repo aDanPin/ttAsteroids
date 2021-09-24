@@ -37,5 +37,21 @@ public class SpawnerBase : MonoBehaviour
         }
     }
  
+    protected Vector2 GetSpawnPoint() {
+        int n = Random.Range(0, 3);
+
+        switch(n) {
+            case 0:
+                return leftDown;
+            case 1:
+                return leftUp;
+            case 2:
+                return rightUp;
+            case 3:
+                return rightDown;
+            default: return leftDown;
+        }
+    }
+
     protected virtual void Spawn() {}
 }

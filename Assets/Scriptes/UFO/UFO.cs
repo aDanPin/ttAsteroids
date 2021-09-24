@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UFO : PhisicalView
 {
+    [SerializeField]
+    private float Speed;
+
     private GameObject player;
 
     protected override void Start()
@@ -15,7 +18,7 @@ public class UFO : PhisicalView
 
     private void Update() {
         MoveToPlayer();
-        RotateToPlayer();
+        // RotateToPlayer();
     }
 
     private void MoveToPlayer() {
@@ -24,7 +27,9 @@ public class UFO : PhisicalView
 
         Vector2 moveVector = target - current;
 
-        SetForce(moveVector, moveForce);
+        Debug.DrawLine(current, current + moveVector, Color.red, 0.1f);
+
+        SetVelocity(moveVector, Speed);
     }
 
     private void RotateToPlayer() {

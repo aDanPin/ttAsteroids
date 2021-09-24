@@ -24,22 +24,6 @@ public class AsteroidsSpawner : SpawnerBase
                        Color.red, 5f);
     }
 
-    private Vector2 GetSpawnPoint() {
-        int n = Random.Range(0, 3);
-        
-        switch(n) {
-            case 0:
-                return leftDown;
-            case 1:
-                return leftUp;
-            case 2:
-                return rightUp;
-            case 3:
-                return rightDown;
-            default: return leftDown;
-        }
-    }
-
     private Vector2 GetDirection(Vector2 sp) {
         Vector2 pp = GameObject.FindWithTag("Player").transform.position;
 

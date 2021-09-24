@@ -90,7 +90,6 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
     private void ClearViews() {
         foreach(int key in views.Keys) {
             views[key].StartDestroy();
-            views.Remove(key);
         }
     }
 }

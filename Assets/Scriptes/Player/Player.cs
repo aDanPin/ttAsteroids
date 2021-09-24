@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : PhisicalView
 {
@@ -17,8 +16,6 @@ public class Player : PhisicalView
     private float timePastAfterLiser = 0;
     private LineRenderer _lr;
 
-    // private InputActions _ia;
-
     private bool moveHeld = false;
     private bool raotateRight = false;
     private bool rotateLeft = false;
@@ -26,8 +23,6 @@ public class Player : PhisicalView
     protected override void Start()
     {
         base.Start();
-
-        // _ia = new InputActions();
 
         _lr = GetComponent<LineRenderer>();
         timePastAfterLiser = laserCooldown;

@@ -91,6 +91,10 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         return _pp.GetPosition(id);
     }
 
+    public float GetSpeed() {
+        return _pp.GetSpeed(id);
+    }
+
     private void OnCollisionStay2D(Collision2D other) {
         OnCollision();
     }

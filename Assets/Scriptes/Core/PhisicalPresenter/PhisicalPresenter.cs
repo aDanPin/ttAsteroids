@@ -66,6 +66,10 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
         return _pm.GetPosition(id);
     }
 
+    public float GetSpeed(int id) {
+        return _pm.GetSpeed(id);
+    }
+
     private void InitializeModel() {
         _pm = gameObject.AddComponent<PhisicalModel>();
 

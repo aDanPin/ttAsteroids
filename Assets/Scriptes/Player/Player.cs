@@ -69,7 +69,7 @@ public class Player : PhisicalView
 
         start = GetPosition();
         direction = Utils.Rotate(Vector2.up, GetRotation());
-        end   = start + direction * 100;
+        end   = start + direction * 100; // 100 - just a long of line
 
         Ray2D ray = new Ray2D(start, direction);
         RaycastHit2D hit;

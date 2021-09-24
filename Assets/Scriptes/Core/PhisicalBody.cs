@@ -15,6 +15,7 @@ public class PhisicalBody : IPhisicalBody
 
     public Vector2 Position{get{return position;}}
     public float Rotation{get{return direction;}}
+    public float Speed{get{return velocity.magnitude;}}
 
     public PhisicalBody(Vector2 p = default(Vector2), float m = 1,
                  float d   = 0f,

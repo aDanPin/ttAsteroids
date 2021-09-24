@@ -51,6 +51,10 @@ public class PhisicalModel : MonoBehaviour, IPhisicalModel
         return bodies[id].Rotation;
     }
 
+    public float GetSpeed(int id) {
+        return bodies[id].Speed;
+    }
+
     public void Clear() {
         bodies.Clear();
     }

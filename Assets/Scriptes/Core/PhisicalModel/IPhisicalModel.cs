@@ -12,5 +12,6 @@ public interface IPhisicalModel {
     void UpdatePhisicals();
     Vector2 GetPosition(int id);
     float GetRotation(int id);
+    float GetSpeed(int id);
     void Clear();
 }

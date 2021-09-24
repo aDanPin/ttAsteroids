@@ -19,9 +19,6 @@ public class AsteroidsSpawner : SpawnerBase
         float speed          = GetSpeedValue();        
         asteroidView.SetValueToInit(rotationDegree,
                                     direction, speed);
-
-        Debug.DrawLine(spawnPoint, spawnPoint + direction.normalized * 12,
-                       Color.red, 5f);
     }
 
     private Vector2 GetDirection(Vector2 sp) {

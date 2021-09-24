@@ -10,6 +10,7 @@ public interface IPhisicalPresenter
     void Rotate(int id, float degree);
     void SetVelocity(int id, Vector2 dir, float val);
     void SetForce(int id, Vector2 dir, float val);
-    float GetRotation(int id);
     Vector2 GetPosition(int id);
+    float GetRotation(int id);
+    float GetSpeed(int id);
 }

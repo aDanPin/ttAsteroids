@@ -12,6 +12,7 @@ public interface IPhisicalView
     void ApplyRotation(float dir);
     float GetRotation();
     Vector2 GetPosition();
+    float GetSpeed();
     void OnCollision();
     void StartDestroy();
 }

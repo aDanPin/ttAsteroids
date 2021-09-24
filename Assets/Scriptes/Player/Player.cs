@@ -8,6 +8,12 @@ public class Player : PhisicalView
     private GameObject bullet;
     [SerializeField]
     private float speedOfBullet;
+    [SerializeField]
+    private float laserCooldown = 5;
+    [SerializeField]
+    private float laserDuration = 1;
+
+    private float timePastAfterLiser = 0;
     private LineRenderer _lr;
 
     protected override void Start()
@@ -15,12 +21,17 @@ public class Player : PhisicalView
         base.Start();
 
         _lr = GetComponent<LineRenderer>();
+        timePastAfterLiser = laserCooldown;
 
         InputEvents.current.onMoveTriggerEnter += Move;
         InputEvents.current.onRotateRightTriggerEnter += Rotate;
         InputEvents.current.onRotateLeftTriggerEnter  += Rotate;
         InputEvents.current.onFierTriggerEnter += Fier;
-        InputEvents.current.onLaserTriggerEnter += Laser;
+        InputEvents.current.onLaserTriggerEnter += LaserStart;
+    }
+
+    private void Update() {
+        DoLaserStuff();
     }
 
     private void Move() {
@@ -38,7 +49,22 @@ public class Player : PhisicalView
                                   speedOfBullet);
     }
 
-    private void Laser() {
+    private void LaserStart() {
+        if (timePastAfterLiser > laserCooldown) {
+            timePastAfterLiser = 0;
+            LaserCast();
+        }
+    }
+ 
+    private void DoLaserStuff() {
+        _lr.positionCount = 0;
+
+        timePastAfterLiser += Time.deltaTime;
+        if(timePastAfterLiser < laserDuration)
+            LaserCast();   
+    }
+
+    private void LaserCast() {
         Vector2 start, direction, end;
 
         start = GetPosition();

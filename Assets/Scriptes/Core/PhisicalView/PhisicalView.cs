@@ -76,10 +76,6 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         _pp = GameObject.FindGameObjectWithTag("PhisicalPresenter")
                 .GetComponent<IPhisicalPresenter>();
 
-        if(_pp == null) {
-            Debug.Log("Empty presenter");
-        }
-
         _pp.AddView(this, id, mass, transform.position);
     }
 

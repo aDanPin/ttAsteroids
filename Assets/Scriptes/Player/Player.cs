@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : PhisicalView
 {
@@ -16,26 +17,49 @@ public class Player : PhisicalView
     private float timePastAfterLiser = 0;
     private LineRenderer _lr;
 
+    // private InputActions _ia;
+
+    private bool moveHeld = false;
+    private bool raotateRight = false;
+    private bool rotateLeft = false;
+
     protected override void Start()
     {
         base.Start();
 
+        // _ia = new InputActions();
+
         _lr = GetComponent<LineRenderer>();
         timePastAfterLiser = laserCooldown;
+    }
 
-        InputEvents.current.onMoveTriggerEnter += Move;
-        InputEvents.current.onRotateRightTriggerEnter += Rotate;
-        InputEvents.current.onRotateLeftTriggerEnter  += Rotate;
-        InputEvents.current.onFierTriggerEnter += Fier;
-        InputEvents.current.onLaserTriggerEnter += LaserStart;
+    private void FixedUpdate() {
+        DoInputStuff();
     }
 
     private void Update() {
         DoLaserStuff();
     }
 
+    private void DoInputStuff() {
+        if(moveHeld)
+            Move();
+        if(rotateLeft)
+            Rotate(Vector2.left);
+        if(raotateRight)
+            Rotate(Vector2.right);
+    }
+
+    public void OnMove() {
+        moveHeld = !moveHeld;
+    }
+
     private void Move() {
         SetForce(Vector2.up, moveForce);
+    }
+
+    public void OnFier() {
+        Fier();
     }
 
     private void Fier() {
@@ -47,6 +71,18 @@ public class Player : PhisicalView
         bulletView.SetValueToInit(GetRotation(),
                                   speedDirection,
                                   speedOfBullet);
+    }
+
+    public void OnRotationLeft() {
+        rotateLeft = !rotateLeft;
+    }
+
+    public void OnRotationRight() {
+        raotateRight = !raotateRight;
+    }
+
+    public void OnLaser() {
+        LaserStart();
     }
 
     private void LaserStart() {

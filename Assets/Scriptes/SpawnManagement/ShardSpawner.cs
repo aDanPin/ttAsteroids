@@ -14,9 +14,9 @@ public class ShardSpawner : MonoBehaviour
     }
 
     private void Spawn(Vector2 pos, float speed) {
-        var shard1View = Instantiate(shard, transform.position, Quaternion.identity)
+        var shard1View = Instantiate(shard, pos, Quaternion.identity)
                              .GetComponent<IPhisicalView>();
-        var shard2View = Instantiate(shard, transform.position, Quaternion.identity)
+        var shard2View = Instantiate(shard, pos, Quaternion.identity)
                              .GetComponent<IPhisicalView>();
 
         float shardSpeed = speed + addedSpeed;

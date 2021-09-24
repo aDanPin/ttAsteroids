@@ -180,5 +180,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 0
   mass: 1
-  moveForce: 0
-  Speed: 5
+  moveForce: 1
+  speed: 5

@@ -5,7 +5,7 @@ using UnityEngine;
 public class UFO : PhisicalView
 {
     [SerializeField]
-    private float Speed;
+    private float speed = 10;
 
     private GameObject player;
 
@@ -17,8 +17,8 @@ public class UFO : PhisicalView
     }
 
     private void Update() {
+        RotateToPlayer();
         MoveToPlayer();
-        // RotateToPlayer();
     }
 
     private void MoveToPlayer() {
@@ -29,17 +29,17 @@ public class UFO : PhisicalView
 
         Debug.DrawLine(current, current + moveVector, Color.red, 0.1f);
 
-        SetVelocity(moveVector, Speed);
+        SetVelocity(moveVector, speed);
     }
 
     private void RotateToPlayer() {
         Vector2 targetVector = player.transform.position - transform.position;
-        float targetAngle = Vector2.Angle(Vector2.up, targetVector);
+        float targetAngle = Utils.Angle(Vector2.up, targetVector);
 
         float currentAngle = GetRotation();
 
         float rotateAngle = targetAngle - currentAngle;
-    
+
         Rotate(rotateAngle);
     }
 }

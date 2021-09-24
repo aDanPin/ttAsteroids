@@ -7,6 +7,8 @@ TagManager:
   - PhisicalModel
   - PhisicalPresenter
   - Enemy
+  - DeadPanel
+  - PointsText
   layers:
   - Default
   - TransparentFX

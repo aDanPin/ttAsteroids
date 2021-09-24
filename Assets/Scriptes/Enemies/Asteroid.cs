@@ -9,4 +9,10 @@ public class Asteroid : PhisicalView
 
         base.OnCollision();
     }
+
+    protected override void Dead()
+    {
+        base.Dead();
+        ShowingMetrics.current.AddPoint();
+    }
 }

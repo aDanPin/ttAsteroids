@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4101955719007573253}
   - component: {fileID: 4101955719007573252}
-  - component: {fileID: 4101955719007573259}
   - component: {fileID: 4647762657604792455}
   - component: {fileID: 6914032194702720640}
+  - component: {fileID: 7905491829446061022}
   m_Layer: 7
   m_Name: Shard
   m_TagString: Enemy
@@ -85,21 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4101955719007573259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4101955719007573258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dc1e30c53943b540a15b469ad765e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 0
-  mass: 1
-  moveForce: 10
 --- !u!58 &4647762657604792455
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,3 +122,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &7905491829446061022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101955719007573258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782d4693412fa47ad21d29c93737c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 0
+  mass: 1
+  moveForce: 10

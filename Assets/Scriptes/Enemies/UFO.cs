@@ -21,6 +21,12 @@ public class UFO : PhisicalView
         MoveToPlayer();
     }
 
+    protected override void Dead()
+    {
+        base.Dead();
+        ShowingMetrics.current.AddPoint();
+    }
+
     private void MoveToPlayer() {
         Vector2 target = player.transform.position;
         Vector2 current = transform.position;

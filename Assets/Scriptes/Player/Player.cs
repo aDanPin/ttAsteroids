@@ -138,6 +138,6 @@ public class Player : PhisicalView
 
     public override void OnCollision()
     {
-        // base.OnCollision();
+        DeadManager.current.OnPlayerDead();
     }
 }

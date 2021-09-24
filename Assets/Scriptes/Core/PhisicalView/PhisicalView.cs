@@ -103,7 +103,7 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         Destroy(gameObject);
     }
 
-    protected void Dead() {
+    protected virtual void Dead() {
         _pp.DeleteView(id);
     }
 

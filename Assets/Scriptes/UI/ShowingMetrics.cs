@@ -43,4 +43,6 @@ public class ShowingMetrics : MonoBehaviour
         speed = spd;
         laserCooldown = cd;
     }
+
+    public int Points{get {return points;}}
 }

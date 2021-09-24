@@ -3,7 +3,7 @@ using UnityEngine;
 public interface IPhisicalView
 {
     void SetValueToInit(float rotationDegree, Vector2 speedDirection,
-                          float speedValue);
+                        float speedValue);
     void Rotate(Vector2 dir);
     void Rotate(float degree);
     void SetVelocity(Vector2 dir, float val);
@@ -11,5 +11,6 @@ public interface IPhisicalView
     void ApplyPosition(Vector2 pos);
     void ApplyRotation(float dir);
     float GetRotation();
+    Vector2 GetPosition();
     void StartDestroy();
 }

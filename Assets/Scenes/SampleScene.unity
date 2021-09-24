@@ -277,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371597371}
   m_LocalRotation: {x: 0, y: 0, z: 0.0002617804, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0, z: 0}
+  m_LocalPosition: {x: 0.53, y: 0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1762150257}
@@ -299,6 +299,8 @@ MonoBehaviour:
   rotateSpeed: 5
   mass: 1
   moveForce: 20
+  bullet: {fileID: 526828142326070898, guid: 6eabdb55b85bb4941aa37f7096e2ce38, type: 3}
+  speedOfBullet: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

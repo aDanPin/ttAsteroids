@@ -18,4 +18,11 @@ public class InputHandler : MonoBehaviour
             InputEvents.current.rotateRightTriggerEnter();
         }
     }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            InputEvents.current.fierTriggerEnter();
+        }
+    }
 }

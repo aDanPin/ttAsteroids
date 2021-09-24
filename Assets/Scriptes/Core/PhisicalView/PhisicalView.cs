@@ -86,6 +86,10 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
     public float GetRotation() {
         return _pp.GetRotation(id);
     }
+    
+    public Vector2 GetPosition() {
+        return _pp.GetPosition(id);
+    }
 
     public void StartDestroy() {
         Destroy(gameObject);

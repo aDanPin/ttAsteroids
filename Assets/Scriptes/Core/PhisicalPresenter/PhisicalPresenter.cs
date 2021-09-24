@@ -22,7 +22,7 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
 
             views[key].ApplyPosition(pos);
             views[key].ApplyRotation(rot);
-        }        
+        }
     }
 
     public void AddView(IPhisicalView pv, int id, float mass,
@@ -60,6 +60,10 @@ public class PhisicalPresenter : MonoBehaviour, IPhisicalPresenter
 
     public float GetRotation(int id) {
         return _pm.GetRotation(id);
+    }
+
+    public Vector2 GetPosition(int id) {
+        return _pm.GetPosition(id);
     }
 
     private void InitializeModel() {

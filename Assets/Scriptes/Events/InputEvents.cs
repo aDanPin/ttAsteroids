@@ -31,4 +31,11 @@ public class InputEvents : MonoBehaviour
             onRotateLeftTriggerEnter(Vector2.left);
         }
     }
+
+    public event Action onFierTriggerEnter;
+    public void fierTriggerEnter() {
+        if(onFierTriggerEnter != null) {
+            onFierTriggerEnter();
+        }
+    }
 }

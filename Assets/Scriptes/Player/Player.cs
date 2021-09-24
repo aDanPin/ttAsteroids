@@ -71,15 +71,21 @@ public class Player : PhisicalView
         direction = Utils.Rotate(Vector2.up, GetRotation());
         end   = start + direction * 100;
 
-        var hits = Physics2D.Raycast(start, direction,
-                                     100f, LayerMask.NameToLayer("Enemy"));
-    
+        Ray2D ray = new Ray2D(start, direction);
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(start, direction, 10000f, LayerMask.GetMask("Enemy"));
+
+        if(hit.transform != null) {
+            hit.transform.gameObject.GetComponent<IPhisicalView>().OnCollision();
+        }
+
+        // Render laser
         _lr.positionCount = 2;
         _lr.SetPosition(0, start);
         _lr.SetPosition(1, end);
     }
 
-    protected override void OnCollision()
+    public override void OnCollision()
     {
         // base.OnCollision();
     }

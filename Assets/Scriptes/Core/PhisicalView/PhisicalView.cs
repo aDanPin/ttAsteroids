@@ -95,7 +95,7 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         OnCollision();
     }
 
-    protected virtual void OnCollision() {
+    public virtual void OnCollision() {
         Destroy(gameObject);
     }
 

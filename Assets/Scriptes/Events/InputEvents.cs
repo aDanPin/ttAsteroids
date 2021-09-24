@@ -38,4 +38,11 @@ public class InputEvents : MonoBehaviour
             onFierTriggerEnter();
         }
     }
+
+    public event Action onLaserTriggerEnter;
+    public void laserTriggerEnter() {
+        if(onLaserTriggerEnter != null) {
+            onLaserTriggerEnter();
+        }
+    }
 }

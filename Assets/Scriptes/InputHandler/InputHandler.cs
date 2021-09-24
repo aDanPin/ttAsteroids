@@ -24,5 +24,9 @@ public class InputHandler : MonoBehaviour
         {
             InputEvents.current.fierTriggerEnter();
         }
+        if (Input.GetKey(KeyCode.V))
+        {
+            InputEvents.current.laserTriggerEnter();
+        }
     }
 }

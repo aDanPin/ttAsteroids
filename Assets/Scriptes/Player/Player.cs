@@ -33,4 +33,9 @@ public class Player : PhisicalView
                                   speedDirection,
                                   speedOfBullet);
     }
+
+    protected override void OnCollision()
+    {
+        // base.OnCollision();
+    }
 }

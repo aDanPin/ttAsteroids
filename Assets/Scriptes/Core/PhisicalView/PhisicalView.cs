@@ -91,11 +91,19 @@ public class PhisicalView : MonoBehaviour, IPhisicalView
         return _pp.GetPosition(id);
     }
 
+    private void OnCollisionStay2D(Collision2D other) {
+        OnCollision();
+    }
+
+    protected virtual void OnCollision() {
+        Destroy(gameObject);
+    }
+
     public void StartDestroy() {
         Destroy(gameObject);
     }
 
-    private void Dead() {
+    protected void Dead() {
         _pp.DeleteView(id);
     }
 
